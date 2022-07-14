@@ -1,0 +1,193 @@
+.container{
+    max-width: 120rem;
+    height: 50rem;
+    box-shadow: var(--default-shadow);
+    margin:8rem auto;
+    background-color: var(--Grey-light-1);
+    @media only screen and (max-width: $breakpoint-largest){
+        margin:0;
+        max-width: 100%;
+       
+    }
+    
+}
+.header{
+    font-size: 1.4rem;
+    background-color: white;
+    height: 7rem;
+    border-bottom:1px solid var(--Grey-light-2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+    @media only screen and (max-width: $breakpoint-small){
+        flex-wrap: wrap;
+        height: 11rem;
+        align-content: space-around;
+    }
+}
+.content{
+    display: flex;
+    @media  only screen and(max-width:$breakpoint-large) {
+        flex-direction: column;
+    }
+
+}
+.sidebar{
+    background-color: var(--Grey-dark-1);
+    flex: 0 0 18%;
+}
+.hotel-view{
+    background-color: var(--Grey-light-1);
+    flex: 1;
+}
+.about{
+    display: flex;
+    background-color: var(--Grey-light-4);
+    padding: 2rem;
+    color: var(--Grey-dark-2);
+    font-size: 1.4rem;
+    @media only screen and (max-width: $breakpoint){
+        flex-direction: column;
+    }
+    &__description{
+        background-color: white;
+        box-shadow: 0 2rem 5rem rgba(0,0,0, .2);
+        flex: 0 0 60%;
+        margin-right: 5rem;
+        padding: 3rem;
+        @media only screen and (max-width: $breakpoint){
+            margin-right: 0;
+            margin-bottom: 3rem;
+        }
+    }
+    &__user-reviews{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+}
+.list{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin-top: 1rem ;
+    padding: 2rem;
+    border-top: var(--border-line);
+    border-bottom: var(--border-line);
+    &__items{
+        flex: 0 0 50%;
+        margin-bottom:.7rem;
+        &::before{
+            content: "";
+            display: inline-block;
+            width: 1rem;
+            height: 1rem;
+            margin-right: .7rem;
+            
+            @supports(-webkit-mask-image: url() or(mask-image)){
+                -webkit-mask-image: url(../img/chevron-thin-right.svg);
+                -webkit-mask-size: cover;
+                 mask-image: url(../img/chevron-thin-right.svg);
+                  mask-size:cover;
+                  background-color: var(--color-primary-light);
+                  background-image: none;
+
+            }
+            
+            
+        }
+    }
+}
+.paragraph{
+    &:not(:last-of-type){
+        margin-bottom: 1rem;
+    }
+}
+.recommendation{
+    padding-top:2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__images{
+        display: flex;
+    }
+    &__photo{
+        height: 4rem;
+        width: 4rem;
+        box-sizing: border-box;
+        border-radius: 50%;
+        border:3px solid white;
+        &:not(:last-child){
+            margin-right: -1.5rem;
+        }
+    }
+}
+.review{
+    box-shadow: var(--default-shadow);
+    background-color: white;
+    margin-bottom: 2rem;
+    padding:3rem;
+    position: relative;
+    
+    &__owner{
+        display: flex;
+        align-items: center;
+        }
+        &__comments{
+            margin-right: auto;
+        }
+    &__photo{
+        height: 4rem;
+        width: 4rem;
+        border-radius: 50%;
+    }
+    &__name{
+        text-transform: uppercase;
+        color: var(--Grey-dark-2);
+        font-weight: 600;
+        margin-bottom: .4rem;
+        font-size: 1.1rem;
+    }
+    &__date{
+        font-size: 1rem;
+        font-weight: 300;
+    }
+    &__rating{
+        color: var(--color-primary);
+        font-size: 2.3rem;
+        font-weight: bolder;
+    }
+}
+.footer{
+    padding: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    &__heading{
+        margin-bottom: 2rem;
+        font-family:sans-serif;
+        font-size: 2rem;
+        color: var(--Grey-dark-3);
+    }
+    &__btn{
+        background-image: linear-gradient(to right ,var(--color-primary), var(--color-primary-dark));
+        padding: 1.75rem 5rem;
+        color: white;
+        font-family: sans-serif;
+        font-weight: 100;
+        border: none;
+        border-radius: 100px;
+        margin-bottom: 1rem;
+        cursor: pointer;
+        &:focus{
+            outline: none;
+        }
+        &:focus{
+            animation: zoom 1s infinite;
+            cursor: pointer;
+        }
+    }
+}
